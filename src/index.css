@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input:focus, textarea:focus {
+    outline: none !important;
+    border-color: #d4b4a4 !important;
+    box-shadow: 0 0 0 3px rgba(212, 180, 164, 0.1) !important;
+  }
+}
