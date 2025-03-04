@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Star, Send, ChevronDown, X } from 'lucide-react';
 import { db } from './firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import Logo from './assets/images/logo.png';
 
 type FormData = {
   name: string;
@@ -173,7 +174,7 @@ function App() {
         {/* Header with Logo */}
         <div className="text-center mb-16">
           <img 
-            src="https://i.imgur.com/XNWzVfr.png" 
+            src={Logo}
             alt="Coco Maco Logo" 
             className="w-32 mx-auto mb-8"
           />
