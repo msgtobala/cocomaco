@@ -47,6 +47,14 @@ const Navbar: React.FC = () => {
             Home
           </Link>
           <Link 
+            to="/shop" 
+            className={`text-[#8b7355] hover:text-[#d4b4a4] transition-colors ${
+              location.pathname === '/shop' ? 'font-medium' : ''
+            }`}
+          >
+            Shop
+          </Link>
+          <Link 
             to="/feedback" 
             className={`text-[#8b7355] hover:text-[#d4b4a4] transition-colors ${
               location.pathname === '/feedback' ? 'font-medium' : ''
@@ -98,6 +106,14 @@ const Navbar: React.FC = () => {
               }`}
             >
               Home
+            </Link>
+            <Link 
+              to="/shop" 
+              className={`text-[#8b7355] hover:text-[#d4b4a4] transition-colors ${
+                location.pathname === '/shop' ? 'font-medium' : ''
+              }`}
+            >
+              Shop
             </Link>
             <Link 
               to="/feedback" 

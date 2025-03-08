@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
-                to="/product/nutimix-premium" 
+                to="/shop" 
                 className="bg-[#d4b4a4] hover:bg-[#c5a292] text-white px-6 py-3 rounded-md transition-colors inline-flex items-center"
               >
                 Shop Now
@@ -92,6 +92,15 @@ const Home: React.FC = () => {
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
+          <div className="text-center mt-12">
+            <Link 
+              to="/shop" 
+              className="bg-[#d4b4a4] hover:bg-[#c5a292] text-white px-8 py-3 rounded-md transition-colors inline-flex items-center"
+            >
+              View All Products
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -155,7 +164,7 @@ const Home: React.FC = () => {
             Join the growing community of health-conscious individuals who trust COCOMACO for their daily nutrition needs.
           </p>
           <Link 
-            to="/product/nutimix-premium" 
+            to="/shop" 
             className="bg-white text-[#d4b4a4] hover:bg-[#f5ebe6] px-8 py-3 rounded-md transition-colors inline-flex items-center"
           >
             Shop Now
