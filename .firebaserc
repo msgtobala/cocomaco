@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "cocomaco-feedback"
-  }
+  },
+  "targets": {
+    "cocomaco-feedback": {
+      "hosting": {
+        "cocomaco": [
+          "cocomaco"
+        ],
+        "cocomaco-feedback": [
+          "cocomaco-feedback"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

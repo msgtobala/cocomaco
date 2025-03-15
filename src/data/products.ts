@@ -6,7 +6,7 @@ export const products: Product[] = [
     name: 'Nutimix Premium Nuts Powder',
     shortDescription: 'A 100% homemade, all-natural blend packed with the richness of premium nuts and seeds.',
     description: 'Experience the goodness of nature with Nutimix Premium Nuts Powder, a 100% homemade, all-natural blend packed with the richness of Almonds, Cashews, Pistachios, Chia Seeds, Flax Seeds, Sunflower Seeds, Pumpkin Seeds, Watermelon Seeds, and Jaggery.',
-    image: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1542990253-a781e04c0082?q=80&w=3494&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     benefits: [
       'No Added Sugar',
       'No Preservatives',
