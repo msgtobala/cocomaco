@@ -14,13 +14,19 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, total })
   if (!isOpen) return null;
 
   const generateWhatsAppMessage = () => {
+    const subtotal = items.reduce((sum, item) => sum + (item.variant.price * item.quantity), 0);
+    const shippingCost = subtotal < 500 ? 50 : 0;
+    
     let message = "Hello! I would like to place an order for:\n\n";
     
     items.forEach(item => {
       message += `• ${item.product.name} (${item.variant.weight}) x ${item.quantity} - ₹${item.variant.price * item.quantity}\n`;
     });
     
-    message += `\nTotal: ₹${total}\n\nPlease let me know how to proceed with the payment and delivery. Thank you!`;
+    message += `\nSubtotal: ₹${subtotal}`;
+    message += `\nShipping: ${shippingCost === 0 ? 'Free' : `₹${shippingCost}`}`;
+    message += `\nTotal: ₹${total}`;
+    message += "\n\nPlease let me know how to proceed with the payment and delivery. Thank you!";
     
     return encodeURIComponent(message);
   };

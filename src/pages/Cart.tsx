@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus, ArrowLeft, ShoppingCart } from 'lucide-react';
+import { Trash2, Plus, Minus, ArrowLeft, ShoppingCart, Truck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import CheckoutModal from '../components/CheckoutModal';
 
 const Cart: React.FC = () => {
   const { items, removeFromCart, updateQuantity, getCartTotal } = useCart();
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+
+  const subtotal = getCartTotal();
+  const shippingCost = subtotal < 500 ? 50 : 0;
+  const total = subtotal + shippingCost;
 
   if (items.length === 0) {
     return (
@@ -137,15 +141,27 @@ const Cart: React.FC = () => {
             <div className="space-y-4 mb-6">
               <div className="flex justify-between text-[#8b7355]/80">
                 <span>Subtotal</span>
-                <span>₹{getCartTotal()}</span>
+                <span>₹{subtotal}</span>
               </div>
               <div className="flex justify-between text-[#8b7355]/80">
                 <span>Shipping</span>
-                <span>Free</span>
+                {shippingCost > 0 ? (
+                  <span>₹{shippingCost}</span>
+                ) : (
+                  <span className="text-[#d4b4a4]">Free</span>
+                )}
               </div>
+              {shippingCost > 0 && (
+                <div className="bg-[#f5ebe6] p-3 rounded-md flex items-start text-sm">
+                  <Truck className="w-4 h-4 text-[#d4b4a4] mr-2 mt-0.5" />
+                  <p className="text-[#8b7355]">
+                    Add items worth ₹{500 - subtotal} more for free shipping
+                  </p>
+                </div>
+              )}
               <div className="border-t border-[#e5d5c5] pt-4 flex justify-between font-medium text-[#8b7355]">
                 <span>Total</span>
-                <span>₹{getCartTotal()}</span>
+                <span>₹{total}</span>
               </div>
             </div>
 
@@ -162,7 +178,7 @@ const Cart: React.FC = () => {
       <CheckoutModal 
         isOpen={showCheckoutModal}
         onClose={() => setShowCheckoutModal(false)}
-        total={getCartTotal()}
+        total={total}
       />
     </div>
   );

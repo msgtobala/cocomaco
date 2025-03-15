@@ -33,11 +33,11 @@ const Home: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="md:block">
+          <div className="hidden md:block">
             <img 
-              src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
               alt="COCOMACO Premium Products" 
-              className="rounded-lg shadow-lg w-full h-[400px] object-cover"
+              className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </div>
         </div>

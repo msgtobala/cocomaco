@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Star, Minus, Plus, ShoppingCart, Check } from 'lucide-react';
+import { Star, Minus, Plus, ShoppingCart, Check, Truck } from 'lucide-react';
 import { getProductById } from '../data/products';
 import { useCart } from '../context/CartContext';
 import { ProductVariant } from '../types';
@@ -113,7 +113,7 @@ const ProductDetail: React.FC = () => {
           </div>
 
           {/* Quantity Selector */}
-          <div className="mb-8">
+          <div className="mb-6">
             <h3 className="text-lg font-medium text-[#8b7355] mb-3">Quantity:</h3>
             <div className="flex items-center">
               <button
@@ -132,6 +132,14 @@ const ProductDetail: React.FC = () => {
                 <Plus className="w-4 h-4" />
               </button>
             </div>
+          </div>
+
+          {/* Shipping Info */}
+          <div className="bg-[#f5ebe6] p-4 rounded-lg mb-8 flex items-center">
+            <Truck className="w-5 h-5 text-[#d4b4a4] mr-3" />
+            <p className="text-[#8b7355]">
+              <span className="font-medium">Free Shipping</span> on orders above ₹500
+            </p>
           </div>
 
           {/* Add to Cart */}
